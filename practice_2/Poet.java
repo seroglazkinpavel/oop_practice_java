@@ -1,23 +1,10 @@
-public class Poet {
-    private String surname;// фамилия
-    private String name;
-    private String patronymic;// отчество
+public class Poet extends Person implements Ontogenez {
 
-    public Poet() {
-        this.surname = surname;
-        this.name = name;
-        this.patronymic = patronymic;
+    public Poet(String surname, String name, String patronymic) {
+        super(surname, name, patronymic);
     }
 
     public void emerge() {
-        surname = "Пушкин";
-        name = "Александр";
-        patronymic = "Сергеевич";
         System.out.println(name + " " + patronymic + " " + surname + " Родился 6 июня 1799 года в Москве.");
-    }
-
-    public static void main(String[] args) {
-        Poet poet = new Poet();
-        poet.emerge();
     }
 }

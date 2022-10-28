@@ -27,11 +27,8 @@ public class FamilyTree {
                 Person p = getPerson(person.parent1);
                 p.children.add(person);
             }
-        } else {
-            bd.add(person);
-        }
-        if (person.parent2 != null) {
-            if (bd.contains(person.parent1)) {
+        } else if (person.parent2 != null) {
+            if (bd.contains(person.parent2)) {
                 Person p = getPerson(person.parent2);
                 p.children.add(person);
             }

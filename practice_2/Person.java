@@ -1,18 +1,12 @@
 //import java.util.List;
 
-public class Person {
+public class Person implements Ontogenez {
     protected String surname;// фамилия
     protected String name;
     protected String patronymic;// отчество
     protected Person parent1;
     protected Person parent2;
-    protected Person children; // List<Person> children
-
-    public Person() {
-        this.surname = "Сидоров";
-        this.name = "Федор";
-        this.patronymic = "Генадьевич";
-    }
+    protected List<Person> children; // List<Person> children
 
     public Person(String surname, String name, String patronymic) {
         this.surname = surname;
@@ -56,7 +50,6 @@ public class Person {
         result = prime * result + ((patronymic == null) ? 0 : patronymic.hashCode());
         result = prime * result + ((parent1 == null) ? 0 : parent1.hashCode());
         result = prime * result + ((parent2 == null) ? 0 : parent2.hashCode());
-        // result = prime * result + id;
         result = prime * result + ((children == null) ? 0 : children.hashCode());
         return result;
     }
@@ -87,8 +80,4 @@ public class Person {
             return false;
         return true;
     }
-
-    public void add(Person person) {
-    }
-
 }

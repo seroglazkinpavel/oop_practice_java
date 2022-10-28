@@ -20,9 +20,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         FamilyTree familyTree = new FamilyTree();
 
-        Person children = new Person("Сидоров", "Федор", "Генадьевич");
-        Person person1 = new Father("Сидоров", "Генадий", "Петрович", null, null, children);
-        Person person2 = new Mother("Сидорова", "Тамара", "Степанова", null, null, children);
+        Person person1 = new Father("Сидоров", "Генадий", "Петрович", null, null);
+        Person person2 = new Mother("Сидорова", "Тамара", "Степанова", null, null);
         Person person = new Person("Сидоров", "Федор", "Генадьевич", person1, person2);
         familyTree.addPerson(person);
         familyTree.addPerson(person1);
@@ -31,13 +30,11 @@ public class App {
         System.out.println(familyTree);
         System.out.println(familyTree.getPerson(person));
 
-        Person person3 = new Person();
-        // person3.emerge();
-        Poet poet = new Poet();
+        Person person3 = new Person("Сидоров", "Федор", "Генадьевич");
+        Poet poet = new Poet("Пушкин", "Александр", "Сергеевич");
         List<Ontogenez> list = new ArrayList<>();
-        list.add(person3);//
-        list.add(poet); // выводит ошибку Метод add(Ontogenez) в списке типов<Ontogenez> неприменим для
-                        // аргументов (Poet)
+        list.add(person3);
+        list.add(poet);
         emergeAll(list);
     }
 
