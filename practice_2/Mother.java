@@ -8,6 +8,6 @@ public class Mother extends Person {
     @Override
     public String toString() {
         return "Mother [surname=" + surname + ", name=" + name + ", patronymic=" + patronymic + ", parent1=" + parent1
-                + ", parent2=" + parent2 + ", children=" + children + "]";
+                + ", parent2=" + parent2 + "]";
     }
 }

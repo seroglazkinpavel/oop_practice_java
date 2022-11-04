@@ -10,27 +10,23 @@ public class FamilyTree {
         bd = new HashSet<>();
     }
 
-    /*
-     * public void printPerson(String surname, String name, String patronymic) {
-     * for (Person p : bd) {
-     * if (bd.contains(p.surname) && bd.contains(p.name) &&
-     * bd.contains(p.patronymic))
-     * System.out.println(p);
-     * }
-     * 
-     * }
-     */
+    public void printPerson(String surname, String name, String patronymic) {
+        for (Person p : bd) {
+            if (p.surname.equals(surname) && p.name.equals(name) && p.patronymic.equals(patronymic))
+                System.out.println(p);
+        }
+    }
 
     public void addPerson(Person person) {
-        if (person.parent1 != null) {
-            if (bd.contains(person.parent1)) {
+        if (person.parent1 != null || person.parent2 != null) {
+            if (bd.contains(person.parent1) || bd.contains(person.parent2)) {
                 Person p = getPerson(person.parent1);
+                Person p1 = getPerson(person.parent2);
                 p.children.add(person);
-            }
-        } else if (person.parent2 != null) {
-            if (bd.contains(person.parent2)) {
-                Person p = getPerson(person.parent2);
-                p.children.add(person);
+                p1.children.add(person);
+                bd.add(p);
+                bd.add(p1);
+                bd.add(person);
             }
         } else {
             bd.add(person);

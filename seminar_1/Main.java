@@ -1,3 +1,5 @@
+/*Работа торгового аппарата*/
+
 import java.util.Scanner;
 
 public class Main {

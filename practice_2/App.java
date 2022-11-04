@@ -28,10 +28,10 @@ public class App {
         familyTree.addPerson(person2);
 
         System.out.println(familyTree);
-        System.out.println(familyTree.getPerson(person));
+        //System.out.println(familyTree.getPerson(person));
 
-        Person person3 = new Person("Сидоров", "Федор", "Генадьевич");
-        Poet poet = new Poet("Пушкин", "Александр", "Сергеевич");
+        Person person3 = new Person("Сидоров", "Федор", "Генадьевич", " Родился 16 июля 1899 года в Москве.");
+        Poet poet = new Poet("Пушкин", "Александр", "Сергеевич",  " Родился 6 июня 1799 года в Москве.");
         List<Ontogenez> list = new ArrayList<>();
         list.add(person3);
         list.add(poet);

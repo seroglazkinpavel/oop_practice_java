@@ -7,11 +7,19 @@ public class Person implements Ontogenez {
     protected Person parent1;
     protected Person parent2;
     protected List<Person> children; // List<Person> children
+    protected birth;
 
     public Person(String surname, String name, String patronymic) {
         this.surname = surname;
         this.name = name;
         this.patronymic = patronymic;
+    }
+
+    public Person(String surname, String name, String patronymic, String birth) {
+        this.surname = surname;
+        this.name = name;
+        this.patronymic = patronymic;
+        this.birth = birth;
     }
 
     public Person(String surname, String name, String patronymic, Person parent1, Person parent2) {
@@ -24,7 +32,7 @@ public class Person implements Ontogenez {
     }
 
     public void emerge() {
-        System.out.println(name + " " + patronymic + " " + surname + " Родился 7января 1954г город Москва");
+        System.out.println(name + " " + patronymic + " " + surname + " " + birth);
     }
 
     @Override
@@ -50,7 +58,7 @@ public class Person implements Ontogenez {
         result = prime * result + ((patronymic == null) ? 0 : patronymic.hashCode());
         result = prime * result + ((parent1 == null) ? 0 : parent1.hashCode());
         result = prime * result + ((parent2 == null) ? 0 : parent2.hashCode());
-        result = prime * result + ((children == null) ? 0 : children.hashCode());
+        //result = prime * result + ((children == null) ? 0 : children.hashCode());
         return result;
     }
 
