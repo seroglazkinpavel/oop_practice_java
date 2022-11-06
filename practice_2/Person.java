@@ -1,13 +1,15 @@
-//import java.util.List;
 
-public class Person implements Ontogenez {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Person implements Could {
     protected String surname;// фамилия
     protected String name;
     protected String patronymic;// отчество
     protected Person parent1;
     protected Person parent2;
+    protected String language;
     protected List<Person> children; // List<Person> children
-    protected birth;
 
     public Person(String surname, String name, String patronymic) {
         this.surname = surname;
@@ -15,11 +17,11 @@ public class Person implements Ontogenez {
         this.patronymic = patronymic;
     }
 
-    public Person(String surname, String name, String patronymic, String birth) {
+    public Person(String surname, String name, String patronymic, String language) {
         this.surname = surname;
         this.name = name;
         this.patronymic = patronymic;
-        this.birth = birth;
+        this.language = language;
     }
 
     public Person(String surname, String name, String patronymic, Person parent1, Person parent2) {
@@ -28,17 +30,16 @@ public class Person implements Ontogenez {
         this.patronymic = patronymic;
         this.parent1 = parent1;
         this.parent2 = parent2;
-
+        children = new ArrayList<>();
     }
 
-    public void emerge() {
-        System.out.println(name + " " + patronymic + " " + surname + " " + birth);
+    public void could() {
+        System.out.println("Говорит на" + language);
     }
 
     @Override
     public String toString() {
-        return "Person [surname=" + surname + ", name=" + name + ", patronymic=" + patronymic + ", parent1=" + parent1
-                + ", parent2=" + parent2 + ", children=" + children + "]";
+        return "Person [surname=" + surname + ", name=" + name + ", patronymic=" + patronymic + "]";
     }
 
     public String getName() {
@@ -58,7 +59,7 @@ public class Person implements Ontogenez {
         result = prime * result + ((patronymic == null) ? 0 : patronymic.hashCode());
         result = prime * result + ((parent1 == null) ? 0 : parent1.hashCode());
         result = prime * result + ((parent2 == null) ? 0 : parent2.hashCode());
-        //result = prime * result + ((children == null) ? 0 : children.hashCode());
+        // result = prime * result + ((children == null) ? 0 : children.hashCode());
         return result;
     }
 
@@ -86,6 +87,26 @@ public class Person implements Ontogenez {
                 return false;
         } else if (!patronymic.equals(other.patronymic))
             return false;
+        if (parent1 == null) {
+            if (other.parent1 != null)
+                return false;
+        } else if (!parent1.equals(other.parent1))
+            return false;
+        if (parent2 == null) {
+            if (other.parent2 != null)
+                return false;
+        } else if (!parent2.equals(other.parent2))
+            return false;
+
+        /*
+         * if (children == null) {
+         * if (other.children != null)
+         * return false;
+         * } else if (!children.equals(other.children))
+         * return false;
+         */
+
         return true;
     }
+
 }

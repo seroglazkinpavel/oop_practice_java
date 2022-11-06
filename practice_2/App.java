@@ -20,27 +20,26 @@ public class App {
     public static void main(String[] args) throws Exception {
         FamilyTree familyTree = new FamilyTree();
 
-        Person person1 = new Father("Сидоров", "Генадий", "Петрович", null, null);
-        Person person2 = new Mother("Сидорова", "Тамара", "Степанова", null, null);
-        Person person = new Person("Сидоров", "Федор", "Генадьевич", person1, person2);
+        Person parent1 = new Father("Сидоров", "Генадий", "Петрович", null, null);
+        Person parent2 = new Mother("Сидорова", "Тамара", "Степанова", null, null);
+        Person person = new Person("Сидоров", "Федор", "Геннадьевич", parent1, parent2);
+
+        familyTree.addPerson(parent1);
+        familyTree.addPerson(parent2);
         familyTree.addPerson(person);
-        familyTree.addPerson(person1);
-        familyTree.addPerson(person2);
-
         System.out.println(familyTree);
-        //System.out.println(familyTree.getPerson(person));
 
-        Person person3 = new Person("Сидоров", "Федор", "Генадьевич", " Родился 16 июля 1899 года в Москве.");
-        Poet poet = new Poet("Пушкин", "Александр", "Сергеевич",  " Родился 6 июня 1799 года в Москве.");
-        List<Ontogenez> list = new ArrayList<>();
+        Person person3 = new Person("Сидоров", "Федор", "Генадьевич", " немецком, английском, французком языках.");
+        Robot poet = new Robot();
+        List<Could> list = new ArrayList<>();
         list.add(person3);
         list.add(poet);
-        emergeAll(list);
+        couldAll(list);
     }
 
-    static void emergeAll(List<Ontogenez> list) {
-        for (Ontogenez ontogenez : list) {
-            ontogenez.emerge();
+    static void couldAll(List<Could> list) {
+        for (Could item : list) {
+            item.could();
         }
     }
 }

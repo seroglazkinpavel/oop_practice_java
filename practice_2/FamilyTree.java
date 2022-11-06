@@ -18,16 +18,16 @@ public class FamilyTree {
     }
 
     public void addPerson(Person person) {
-        if (person.parent1 != null || person.parent2 != null) {
-            if (bd.contains(person.parent1) || bd.contains(person.parent2)) {
-                Person p = getPerson(person.parent1);
-                Person p1 = getPerson(person.parent2);
+        if (bd.contains(person.parent1) || bd.contains(person.parent2)) {
+            Person p = getPerson(person.parent1);
+            if (p != null) {
                 p.children.add(person);
-                p1.children.add(person);
-                bd.add(p);
-                bd.add(p1);
-                bd.add(person);
             }
+            Person p1 = getPerson(person.parent2);
+            if (p1 != null) {
+                p1.children.add(person);
+            }
+            bd.add(person);
         } else {
             bd.add(person);
         }
@@ -44,7 +44,7 @@ public class FamilyTree {
 
     @Override
     public String toString() {
-        return "FamilyTree [bd=" + bd + "]";
+        return "FamilyTree" + bd;
     }
 
 }
