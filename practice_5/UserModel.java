@@ -47,22 +47,28 @@ public class UserModel {
      * Получение списка пользователей из БД
      */
     public void loadUsers() {
-        System.out.println(users);
+        for (int i = 0; i < users.size(); i++) {
+            System.out.println(users.get(i));
+        }
     }
 
     /*
      * Добавление пользователя в БД
      */
     public void regist(User userinformation) {
-
-        users.add(userinformation);
+        for (int i = 0; i < users.size(); i++) {
+            if (users.contains(userinformation)) {
+                System.out.println("Такие данные уже есть.");
+                System.exit(i);
+            } else {
+                users.add(userinformation);
+                System.out.println("Вы успешно зарегистрировались " + userinformation.getName() + "!");
+                System.out.println("Список пользователей.");
+                loadUsers();
+                System.exit(i);
+            }
+        }
 
     }
 
-    /*
-     * Удаление всех пользователей из БД
-     */
-    public void clearUsers() {
-
-    }
 }

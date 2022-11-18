@@ -2,10 +2,12 @@
 public class Presenter {
 
     private UserModel model; // Связь с моделью
+    private View view;
     private User userinformation;
 
-    public Presenter(UserModel model) {
+    public Presenter(UserModel model, View view) {
         this.model = model;
+        this.view = view;
         userinformation = new User(null, null, null);
     }
 
