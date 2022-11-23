@@ -1,6 +1,4 @@
 
-import java.util.List;
-
 /*Реализовать, с учетом ооп подхода, приложение
 Для проведения исследований с генеалогическим древом.
 Идея: описать некоторое количество компонент, например:
@@ -14,16 +12,13 @@ public class App {
     public static void main(String[] args) throws Exception {
         FamilyTree familyTree = new FamilyTree();
 
-        Person children = new Children("Сидоров", "Федор", "Генадьевич");
-        Person person1 = new Father("Сидоров", "Генадий", "Петрович", null, null,
-                children);
-        Person person2 = new Mother("Сидорова", "Тамара", "Степанова", null, null,
-                children);
-        Person person = new Person("Сидоров", "Федор", "Генадьевич", person1, person2, null);
+        Person person1 = new Father("Сидоров", "Генадий", "Петрович", null, null);
+        Person person2 = new Mother("Сидорова", "Тамара", "Степанова", null, null);
+        Person person = new Person("Сидоров", "Федор", "Генадьевич", person1, person2);
         // System.out.println(person);
 
         familyTree.addPerson(person);
-        familyTree.printPerson("Сидоров", "Федор", "Генадьевич");// не выводится
+        // familyTree.printPerson("Сидоров", "Федор", "Генадьевич");// не выводится
         System.out.println(familyTree);// как переопределить
 
         System.out.println(familyTree.getPerson(person));// дает null

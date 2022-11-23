@@ -2,21 +2,23 @@ public interface View {
 
     String getLogin();
 
-    void setLogin(String value);
+    // void setLogin(String value);
 
     String getPassword();
 
-    void setPassword(String value);
+    // void setPassword(String value);
 
     String getNewName();
 
-    void setNewName(String value);
+    // void setNewName(String value);
 
     String getNewLogin();
 
-    void setNewLogin(String value);
+    // void setNewLogin(String value);
 
     String getNewPassword();
 
-    void setNewPassword(String value);
+    // void setNewPassword(String value);
+
+    String choice();
 }

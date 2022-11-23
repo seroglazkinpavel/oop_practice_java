@@ -8,17 +8,29 @@ public class Activity implements View {
     }
 
     @Override
+    public String choice() {
+        System.out.println("---------- Добро пожаловать ----------");
+        System.out.println("1. Вход 2. Регистрация 3. Выход");
+        System.out.println("Пожалуйста, введите ваш выбор");
+        String choice = in.nextLine();
+        return choice;
+    }
+
+    @Override
     public String getLogin() {
+        System.out.println("---------- Авторизация ----------");
         System.out.println("Пожалуйста, введите логин пользователя");
         String login = in.nextLine();
         return login;
     }
 
-    @Override
-    public void setLogin(String value) {
-        System.out.printf("newlogin: %s\n", value);
-
-    }
+    /*
+     * @Override
+     * public void setLogin(String value) {
+     * System.out.printf("newlogin: %s\n", value);
+     * 
+     * }
+     */
 
     @Override
     public String getPassword() {
@@ -27,23 +39,28 @@ public class Activity implements View {
         return password;
     }
 
-    @Override
-    public void setPassword(String value) {
-        System.out.printf("newpassword: %s\n", value);
-    }
+    /*
+     * @Override
+     * public void setPassword(String value) {
+     * System.out.printf("newpassword: %s\n", value);
+     * }
+     */
 
     @Override
     public String getNewName() {
+        System.out.println("---------- Регистрация ----------");
         System.out.println("Пожалуйста, введите имя пользователя");
         String newname = in.nextLine();
         return newname;
     }
 
-    @Override
-    public void setNewName(String value) {
-        System.out.printf("Name: %s\n", value);
-
-    }
+    /*
+     * @Override
+     * public void setNewName(String value) {
+     * System.out.printf("Name: %s\n", value);
+     * 
+     * }
+     */
 
     @Override
     public String getNewLogin() {
@@ -52,11 +69,13 @@ public class Activity implements View {
         return newlogin;
     }
 
-    @Override
-    public void setNewLogin(String value) {
-        System.out.printf("newlogin: %s\n", value);
-
-    }
+    /*
+     * @Override
+     * public void setNewLogin(String value) {
+     * System.out.printf("newlogin: %s\n", value);
+     * 
+     * }
+     */
 
     @Override
     public String getNewPassword() {
@@ -65,9 +84,11 @@ public class Activity implements View {
         return newpassword;
     }
 
-    @Override
-    public void setNewPassword(String value) {
-        System.out.printf("newpassword: %s\n", value);
-
-    }
+    /*
+     * @Override
+     * public void setNewPassword(String value) {
+     * System.out.printf("newpassword: %s\n", value);
+     * 
+     * }
+     */
 }

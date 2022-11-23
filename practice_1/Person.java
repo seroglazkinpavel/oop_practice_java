@@ -1,4 +1,4 @@
-import java.util.List;
+//import java.util.List;
 
 public class Person {
     protected String surname;// фамилия
@@ -14,24 +14,14 @@ public class Person {
         this.patronymic = patronymic;
     }
 
-    public Person(String surname, String name, String patronymic, Person parent1, Person parent2,
-            Person children) {
+    public Person(String surname, String name, String patronymic, Person parent1, Person parent2) {
         this.surname = surname;
         this.name = name;
         this.patronymic = patronymic;
         this.parent1 = parent1;
         this.parent2 = parent2;
-        this.children = children;
-    }
 
-    /*
-     * public Person(String surname, String name, String patronymic) {
-     * this.surname = surname;
-     * this.name = name;
-     * this.patronymic = patronymic;
-     * 
-     * }
-     */
+    }
 
     @Override
     public String toString() {

@@ -9,13 +9,16 @@ public class FamilyTree {
 
     }
 
-    public void printPerson(String surname, String name, String patronymic) {
-
-        for (Person p : bd) {
-            if (bd.contains(p.surname) && bd.contains(p.name) && bd.contains(p.patronymic))
-                System.out.println(p);
-        }
-    }
+    /*
+     * public void printPerson(String surname, String name, String patronymic) {
+     * 
+     * for (Person p : bd) {
+     * if (bd.contains(p.surname) && bd.contains(p.name) &&
+     * bd.contains(p.patronymic))
+     * System.out.println(p);
+     * }
+     * }
+     */
 
     public void addPerson(Person person) {
         if (person.parent1 != null) {

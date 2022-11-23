@@ -1,10 +1,9 @@
-import java.util.List;
+//import java.util.List;
 
 public class Mother extends Person {
 
-    public Mother(String surname, String name, String patronymic, Person parent1, Person parent2,
-            Person children) {
-        super(surname, name, patronymic, parent2, parent2, children);
+    public Mother(String surname, String name, String patronymic, Person parent1, Person parent2) {
+        super(surname, name, patronymic, parent2, parent2);
     }
 
     @Override
